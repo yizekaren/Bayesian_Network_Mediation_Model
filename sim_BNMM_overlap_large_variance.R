@@ -4,9 +4,6 @@
 
 path <- "/../../"
 
-###seed to control true parameters the same 
-args<- c(50002)
-set.seed(50002)
 
 #library
 library(MASS)
@@ -129,8 +126,7 @@ for (i in 1:n){
 
 ############################################### Model Fitting ########################################################
 
-#initialized values 
-mcmc_samples_1<- 1000
+mcmc_samples_1<- 5000
 gamma_indicator_y<- matrix(0,nrow=mcmc_samples_1,ncol=num_mediator)
 gamma_indicator_theta<- matrix(0,nrow=mcmc_samples_1,ncol=num_mediator)
 gamma_indicator_y[1,]<- gamma_indicator_true
@@ -509,21 +505,6 @@ for (i in 2:mcmc_samples_1) {
     
   }
   
-  print(i)
-  print(c("alpha0_true:",alpha0_true))
-  print(c("alpha0_mu:",mu_pos_alpha0))
-  print(c("alpha0_mean:",mean(alpha0[1:i])))
-  print(c("tot_num_of_true_significant_mediator:",num_true_mediator))
-  print(c("tot_num_of_significant_mediator:",sum(gamma_indicator_temp_decision_y*gamma_indicator_temp_decision_theta)))
-  print(c("tot_prop_of_correct_mediator%:",(num_correct_mediator/num_mediator)*100))
-  print(c("true_positive:",tp_num))
-  print(c("false_positive:",fp_num))
-  
 }
-
-
-#save the results as .rdata
-save.image(file=paste0(path, 
-                       "mediation_simulation_n_full_version_overlap_assuming_c_true_large_variance_",args[1],".rdata"))
 
 
