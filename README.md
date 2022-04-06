@@ -6,8 +6,8 @@ BNMM is an integrative mediation model with networks entailing the mediation eff
 
 ## Usage
 
-Please download the R script, change the path to where you want to store the result, then run the code by order. The first part of R script is the data generation for one of our simulation settings, the second part is the model implementation. 
+The R script *BNMM_function.R* contains the MCMC algorithm for BNMM model
 
 
 ## Reference
-Yize Zhao, Jiachen Cai, Tianqi Chen, Sarah Lichenstein, Marc Potenza, Sarah Yip (2021). Bayesian network mediation analysis with application to brain functional connectome.
+Yize Zhao, Tianqi Chen, Jiachen Cai, Sarah Lichenstein, Marc Potenza, Sarah Yip (2021). Bayesian network mediation analysis with application to brain functional connectome.
